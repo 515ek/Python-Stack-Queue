@@ -1,10 +1,10 @@
 1. Implement a function with signature transfer(S,T) that transfers all elements from Stack S onto Stack T, so that that elements that starts at the top of S is the first to be inserted into T, and element at the bottom of S ends up at the top of T.
 
-2.      Implement a function that reverses a list of elements by pushing them onto a stack in one order, and write them back to the list in reversed order.
+2. Implement a function that reverses a list of elements by pushing them onto a stack in one order, and write them back to the list in reversed order.
 
-3.      Modify ArrayStack implementation so that the stack’s capacity is limited to maxlen elements. If push is called when the stack is at full capacity, throw a Full exception.
+3. Modify ArrayStack implementation so that the stack’s capacity is limited to maxlen elements. If push is called when the stack is at full capacity, throw a Full exception.
 
-4.      Implement a transfer function and two temporary stacks, to replace the contents of a given stack S with those same elements, but in reverse order.
+4. Implement a transfer function and two temporary stacks, to replace the contents of a given stack S with those same elements, but in reverse order.
 
 5.      HTML generally allows optional attributes to be expressed as part of an opening tag. The general form used is <name attribute1 = “value1” attribute2 = “value2”>. Write function that checks whether tags or matched properly, even when an opening tag may include one or more attributes.
 
