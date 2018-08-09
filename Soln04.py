@@ -7,11 +7,16 @@
 #####################################################################################################################
 import user_ds as UDS
 import random
-def transfer(S,T):
+def transfer(S):
+    T1 = UDS.unlimStack()
+    T2 = UDS.unlimStack()
     while not S.isEmpty():
-        T.push(S.pop())
-        print
-    return T.data
+        T1.push(S.pop())
+    while not T1.isEmpty():
+        T2.push(T1.pop())
+    while not T2.isEmpty():
+        S.push(T2.pop())
+    return S.data
 
 def seed_stack(stk):
     for i in range(10):
@@ -25,7 +30,7 @@ def Soln04():
     assert(T.isEmpty())
     st = list(seed_stack(S))
     assert(S.stackPeek())
-    return (st,transfer(S,T))
+    return (st,transfer(S))
 
 if __name__ == '__main__':
     print(Soln04())
