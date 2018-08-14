@@ -6,7 +6,7 @@
 ######################################################################################
 
 class myStack:
-    capacity = 20
+    capacity = 5
     def __init__(self):
         self.data = []
         self.count = 0
@@ -65,3 +65,36 @@ class unlimStack:
             return self.data.pop()
         else:
             return False
+
+class singleQueue():
+    cap = 20
+
+    def __init__(self):
+        self.data = []
+        self.front = 0
+        self.rear = 0
+    
+    def isEmpty(self):
+        return self.front == self.rear
+    
+    def isFull(self):
+        return self.rear == singleQueue.cap
+    
+    def queueLength(self):
+        return self.rear
+    
+    def insert(self,item):
+        if not self.isFull():
+            self.data.append(item)
+            self.rear += 1
+    
+    def remove(self):
+        if not self.isEmpty():
+            tmp = self.data[self.front]
+            self.data.remove(tmp)
+            self.rear -= 1
+            return tmp
+
+
+class flexQueue():
+    pass
