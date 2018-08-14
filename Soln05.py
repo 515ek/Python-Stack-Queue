@@ -33,7 +33,7 @@ def validate(tag):
                 tmp = stk.pop() + symbol
                 stk.push(tmp)
         elif symbol[0:2] == '</' and symbol[-1] == '>':
-            if stk.stackPeek()[0] == '<':
+            if stk.stackPeek()[1:-1] == symbol[2:-1]:
                 stk.pop()
         else:
             if stk.stackPeek() == '=':
@@ -44,10 +44,32 @@ def validate(tag):
                 stk.push(tmp)
             else:
                 stk.push(symbol)
+    print(stk.data)
+    return stk.isEmpty()
+
+def parse(script):
+    stk = uds.unlimStack()
+    start = script.find('<')
+    while start != -1:
+        end = script[start:].find('>') + start
+        print('end-->',script[end:])
+        tag = script[start+1:end]
+        print('tag-->',tag)
+        if tag[0] != '/' and tag[-1] != '/':
+            stk.push(tag.split(' ')[0])
+        elif tag[0] != '/' and tag[-1] == '/':
+            if not validate('<'+tag+'>'):
+                return False
+        elif stk.stackPeek() == tag[1:]:
+            stk.pop()
+        script = script[end+1:]
+        print('script-->',script)
+        start = script.find('<')
+        print('start-->','\''+script[start:])
     return stk.isEmpty()
 
 def Soln05(tag):
-    return(validate(tag))
+    return(parse(tag))
 
 if __name__ == '__main__':
-    print(Soln05('<font color = \'red\' />'))
+    print(Soln05('<html> <body> <font color = \'red\' /> </body> </html>'))
