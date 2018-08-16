@@ -22,8 +22,7 @@ def test_stack_full():
         stk.push(random.randint(el,el*5))
     assert(stk.isFull() == True)
     assert(stk.stackPeek())
-    while not stk.isEmpty():
-        assert(stk.pop())
+    assert(stk.pop())
     assert(stk.stackPeek())
 
 def test_unlimStack():
@@ -34,7 +33,21 @@ def test_unlimStack():
     while not ustk.isEmpty():
         assert(ustk.pop())
 
+def test_flexQue():
+    fq = UDS.flexQueue()
+    assert(fq.isEmpty())
+    for i in range(4):
+        fq.enque(random.randint(1,50))
+    assert(fq.qLength() == 4)
+    assert(fq.qFirst())
+    assert(fq.qCapacity() == 4)
+    fq.enque(random.randint(1,50))
+    assert(fq.qLength() == 5)
+    assert(fq.qCapacity() > 4)
+    assert(fq.deque())
+
 if __name__ == '__main__':
     test_stack_empty()
     test_stack_full()
     test_unlimStack()
+    test_flexQue()

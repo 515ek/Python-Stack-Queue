@@ -2,9 +2,7 @@
 ## Name: Vivek Babu G R
 ## Date: 26-07-2018
 ## Assignment: Stacks and Queues
-## Question5. HTML generally allows optional attributes to be expressed as part of an opening tag. The general form
-## used is <name attribute1 = “value1” attribute2 = “value2”>. Write function that checks whether tags or matched
-## properly, even when an opening tag may include one or more attributes.
+## Question 5: HTML generally allows optional attributes to be expressed as part of an opening tag. The general form used is <name attribute1 = “value1” attribute2 = “value2”>. Write function that checks whether tags or matched properly, even when an opening tag may include one or more attributes.
 #####################################################################################################################
 import user_ds as uds
 import sys

@@ -8,22 +8,39 @@ import user_ds as uds
 
 class qStack():
     def __init__(self):
-        self.data = uds.singleQueue()
+        self.data = uds.flexQueue()
     
     def isEmpty(self):
-        self.data.isEmpty()
-    
-    def isFull(self):
-        self.data.isFull()
+        return self.data.isEmpty()
 
     def stackLength(self):
-        self.data.queueLength()
+        return self.data.qLength()
     
     def stackPeek(self):
         pass
     
     def push(self,item):
-        pass
+        self.data.enque(item)
     
     def pop(self):
-        pass
+        if not self.data.isEmpty():
+            i = 1
+            while i < self.data.qLength():
+                self.data.enque(self.data.deque())
+                i += 1
+            return self.data.deque()
+        else:
+            return False
+
+def test_soln07():
+    qs = qStack()
+    assert(qs.isEmpty())
+    qs.push(2)
+    qs.push(3)
+    qs.push(4)
+    qs.push(5)
+    qs.push(6)
+    return qs.pop()
+
+if __name__ == '__main__':
+    print(test_soln07())

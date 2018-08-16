@@ -2,8 +2,7 @@
 ## Name: Vivek Babu G R
 ## Date: 26-07-2018
 ## Assignment: Stacks and Queues
-## Question4: Implement a transfer function and two temporary stacks, to replace the contents of a given stack S with
-## those same elements, but in reverse order.
+## Question 4: Implement a transfer function and two temporary stacks, to replace the contents of a given stack S with those same elements, but in reverse order.
 #####################################################################################################################
 import user_ds as UDS
 import random
