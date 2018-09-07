@@ -63,8 +63,6 @@ class unlimStack:
         if not self.isEmpty():
             self.count -= 1
             return self.data.pop()
-        else:
-            return False
 
 '''
 class singleQueue():

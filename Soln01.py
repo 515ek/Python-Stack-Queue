@@ -14,7 +14,7 @@ def transfer(S,T):
     return T.data
 
 def seed_stack(stk):
-    for i in range(10):
+    for i in range(3):
         stk.push(random.randint(i*3,(i+1)*3))
     return stk.data
 
