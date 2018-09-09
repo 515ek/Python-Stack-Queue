@@ -121,8 +121,8 @@ class flexQueue():
             self.data[self.front] = None
             self.front = (self.front + 1) % len(self.data)
             self.size -= 1
-            if 0 < self.size < len(self.data) // 4:
-                self.resize(len(self.data)//2)
+            """ if 0 < self.size < len(self.data) // 4:
+                self.resize(len(self.data)//2) """
             return element
         else:
             return None
@@ -139,6 +139,7 @@ class flexQueue():
         walk = self.front
         self.data = [None] * cap
         for k in range(len(old)):
+            #print(walk,k,len(self.data),len(old))
             self.data[k] = old[walk]
             walk = (walk + 1) % len(old)
         self.front = 0

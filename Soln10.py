@@ -14,7 +14,6 @@ def restore(S,Q):
         Q.enque(Q.deque())
         i += 1
     el = Q.deque()
-    print(el)
     return el
 
 def scan(S,x):
@@ -35,13 +34,14 @@ def scan(S,x):
     
 def soln10():
     S = uds.unlimStack()
-    S.push(10)
+    """ S.push(10)
     S.push(20)
     S.push(30)
+    S.push(40)
+    S.push(50) """
+    soln.seed_stack(S)
     print(S.data)
-    #S.push(40)
-    #S.push(50)
-    print(scan(S,10))
+    print(scan(S,26 ))
 
 if __name__ == '__main__':
     soln10()

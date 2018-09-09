@@ -36,7 +36,7 @@ def test_unlimStack():
 def test_flexQue():
     fq = UDS.flexQueue()
     assert(fq.isEmpty())
-    for i in range(4):
+    for i in range(10):
         fq.enque(random.randint(1,50))
     assert(fq.qLength() == 4)
     assert(fq.qFirst())
@@ -44,7 +44,6 @@ def test_flexQue():
     fq.enque(random.randint(1,50))
     assert(fq.qLength() == 5)
     assert(fq.qCapacity() > 4)
-    assert(fq.deque())
 
 if __name__ == '__main__':
     test_stack_empty()
